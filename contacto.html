@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Javier Arias, desarrollador full stack"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/z6bhb6c7/image/upload/v1793443373/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Contacto | Javier Arias</title>
+  </head>
+  <body>
+    <header class="header__main">
+      <a href="index.html" class="logo">JA</a>
+      <nav class="nav__main">
+        <ul class="nav__links">
+          <li class="nav__links--li"><a href="#about">About</a></li>
+          <li class="nav__links--li"><a href="#skills">Skills</a></li>
+          <li class="nav__links--li"><a href="#proyectos">Proyects</a></li>
+          <li class="nav__links--li"><a href="#recursos">Recursos</a></li>
+          <li class="nav__links--li"><a href="contacto.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav__hamburguer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="contacto">
+        <h1>Contacto</h1>
+        <p>
+          ¿Quieres escribirme? Rellena el formulario y te responderé lo antes
+          posible.
+        </p>
+
+        <form action="#" method="POST">
+          <div>
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" required />
+          </div>
+
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <a
+          href="https://github.com/ariasimage"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/javier-arias-frontend/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <p>
+        Hecho con <span class="heart" aria-hidden="true">❤</span> por Javier
+        Arias
+      </p>
+      <p>© 2026 Javier Arias · Frontend Developer · Madrid</p>
+    </footer>
+  </body>
+</html>
