@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -15,30 +15,35 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Contacto | Javier Arias</title>
+      <script src="./js/script.js" defer></script>
   </head>
   <body>
     <header class="header__main">
       <a href="index.html" class="logo">JA</a>
-      <nav class="nav__main">
+      <nav class="nav__main" id="nav-principal" aria-label="Navegación principal">
         <ul class="nav__links">
           <li class="nav__links--li"><a href="about.html">About</a></li>
           <li class="nav__links--li"><a href="index.html#skills">Skills</a></li>
-          <li class="nav__links--li">
-            <a href="index.html#projects">Projects</a>
-          </li>
-          <li class="nav__links--li">
-            <a href="index.html#recursos">Recursos</a>
-          </li>
+          <li class="nav__links--li"><a href="index.html#projects">Projects</a></li>
+          <li class="nav__links--li"><a href="index.html#recursos">Recursos</a></li>
           <li class="nav__links--li"><a href="contacto.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav__hamburguer">
+      <button
+        class="nav__hamburguer"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-principal"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </header>
+
     <main class="main--grow">
+   
       <section class="contact" id="contacto">
         <div class="contact__container">
           <p class="section__label contact__tag">— Contacto</p>
@@ -75,6 +80,7 @@
                 />
               </div>
             </div>
+
             <div class="contact__field">
               <label class="contact__label" for="asunto">Asunto</label>
               <input
@@ -86,6 +92,7 @@
                 required
               />
             </div>
+
             <div class="contact__field">
               <label class="contact__label" for="mensaje">Mensaje</label>
               <textarea
@@ -98,13 +105,12 @@
               ></textarea>
             </div>
 
-            <button class="contact__submit" type="submit">
-              Enviar mensaje
-            </button>
+            <button class="contact__submit" type="submit">Enviar mensaje</button>
           </form>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <nav class="footer__nav" aria-label="Enlaces del pie de página">
         <a

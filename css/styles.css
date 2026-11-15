@@ -73,15 +73,35 @@ body {
 }
 
 .nav__main {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  padding: var(--space-4xl) var(--space-xl) var(--space-xl);
+  background-color: var(--color-dark);
+  border-left: 1px solid var(--color-grey);
   color: var(--color-white);
+  overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden; 
+}
+
+.nav__main--open {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 0.95;
+  transition:
+    transform 0.3s ease,
+    visibility 0.3s;
 }
 
 .nav__links {
   display: flex;
-  gap: var(--space-xl);
+  flex-direction: column;
+  gap: var(--space-xs);
   letter-spacing: 1px;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-light);
@@ -97,12 +117,21 @@ body {
   color: var(--color-grey);
 }
 
+.nav__links--li a {
+  display: block;
+  padding: var(--space-sm) 0; 
+}
+
 .nav__hamburguer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative; 
   width: 30px;
   height: 20px;
+  padding: 0;
+  background: none;
+  border: 0;
   cursor: pointer;
 }
 
@@ -110,6 +139,21 @@ body {
   width: 100%;
   height: var(--space-2xs);
   background-color: var(--color-white);
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s;
+}
+
+.nav__hamburguer[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__hamburguer[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__hamburguer[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .hero {
@@ -258,7 +302,7 @@ body {
   padding: var(--space-3xl) var(--space-xl);
   background-color: var(--color-white);
   border-top: 1px solid var(--color-grey);
-  color: var(--color-grey);
+  color: var(--color-secondary);
   font-size: var(--font-size-2xs);
   letter-spacing: 2px;
   text-align: center;
@@ -273,7 +317,7 @@ body {
 }
 
 .footer__nav a {
-  color: var(--color-grey);
+  color: var(--color-secondary);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   transition: color 0.2s;
@@ -346,6 +390,7 @@ body {
 }
 
 .contact__intro {
+  max-width: 560px;
   margin-bottom: var(--space-lg);
   line-height: 2;
   letter-spacing: 1px;
@@ -390,7 +435,7 @@ body {
 
 .contact__input::placeholder {
   color: var(--color-secondary);
-  opacity: 0.5;
+  opacity: .5;
 }
 
 .contact__input:focus-visible {
@@ -500,8 +545,9 @@ body {
   flex: 0 0 auto;
   width: 100%;
   max-width: 320px;
-  padding: var(--space-xs);
+  padding: var(--space-md) var(--space-md) var(--space-sm);
   background-color: var(--color-white);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-black) 45%, transparent);
   transform: rotate(-3deg);
   transition: transform 0.3s ease;
 }
@@ -514,11 +560,11 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 1px solid var(--color-black);
+  background-color: var(--color-light);
 }
 
 .polaroid__caption {
-  padding: var(--space-lg) 0 var(--space-sm);
+  padding: var(--space-lg) 0 var(--space-md);
   text-align: center;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-light);
@@ -608,7 +654,25 @@ body {
   }
 
   .nav__main {
-    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    border-left: 0;
+    overflow: visible;
+    transform: none;
+    visibility: visible;
+  }
+
+  .nav__links {
+    flex-direction: row;
+    gap: var(--space-xl);
+  }
+
+  .nav__links--li a {
+    padding: 0;
   }
 
   .section {
@@ -634,7 +698,8 @@ body {
   .contact__row {
     flex-direction: row;
   }
-  .about__title {
+
+    .about__title {
     font-size: 4.5rem;
   }
 
@@ -664,7 +729,7 @@ body {
   }
 
   .about__card {
-    flex: 1 1 calc(50% - var(--space-lg));
+    flex: 1 1 50%;
   }
 }
 
@@ -678,7 +743,7 @@ body {
   .hero__text {
     flex: 0 0 50%;
     justify-content: center;
-    padding: var(--space-3xl);
+    padding:var(--space-3xl);
   }
 
   .hero__image {

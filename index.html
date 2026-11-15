@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Portfolio | Javier Arias</title>
+      <script src="./js/script.js" defer></script>
   </head>
   <body>
     <header class="header__main">
       <a href="index.html" class="logo">JA</a>
-      <nav class="nav__main">
+      <nav class="nav__main" id="nav-principal" aria-label="Navegación principal">
         <ul class="nav__links">
           <li class="nav__links--li"><a href="about.html">About</a></li>
           <li class="nav__links--li"><a href="#skills">Skills</a></li>
@@ -28,12 +29,19 @@
           <li class="nav__links--li"><a href="contacto.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav__hamburguer">
+      <button
+        class="nav__hamburguer"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-principal"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </header>
+
     <main>
       <section class="hero">
         <div class="hero__text">
@@ -86,13 +94,16 @@
       <section class="section section--dark" id="skills">
         <p class="section__label">— Skills</p>
       </section>
+
       <section class="section section--light" id="projects">
         <p class="section__label">— Projects</p>
       </section>
+
       <section class="section section--dark" id="recursos">
         <p class="section__label">— Recursos</p>
       </section>
     </main>
+
     <footer class="footer">
       <nav class="footer__nav" aria-label="Enlaces del pie de página">
         <a
