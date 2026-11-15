@@ -3,12 +3,6 @@ const btnHamburguesa = document.querySelector(".nav__hamburguer")
 const menuNavegacion = document.querySelector("#nav-principal")
 const navLinks = document.querySelectorAll(".nav__links--li a")
 
-const abrirMenu = () => {
-  menuNavegacion.classList.add("nav__main--open")
-  btnHamburguesa.setAttribute("aria-expanded", "true")
-  btnHamburguesa.setAttribute("aria-label", "Cerrar menú")
-}
-
 const cerrarMenu = () => {
   menuNavegacion.classList.remove("nav__main--open")
   btnHamburguesa.setAttribute("aria-expanded", "false")
@@ -17,8 +11,9 @@ const cerrarMenu = () => {
 
 // Abrir y cerrar con el botón hamburguesa
 btnHamburguesa.addEventListener("click", () => {
-  const estaAbierto = menuNavegacion.classList.contains("nav__main--open")
-  estaAbierto ? cerrarMenu() : abrirMenu()
+  const abierto = menuNavegacion.classList.toggle("nav__main--open")
+  btnHamburguesa.setAttribute("aria-expanded", abierto)
+  btnHamburguesa.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú")
 })
 
 // Cerrar al pulsar un enlace
