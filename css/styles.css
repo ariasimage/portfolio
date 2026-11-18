@@ -683,6 +683,10 @@ body {
     padding: 0;
   }
 
+  .nav__main--open .nav__links--li {
+    border-bottom: 0;
+  }
+
   .section {
     padding: var(--space-4xl) var(--space-3xl);
   }
