@@ -86,16 +86,23 @@ body {
   color: var(--color-white);
   overflow-y: auto;
   transform: translateX(100%);
-  visibility: hidden; 
+  visibility: hidden;
 }
 
 .nav__main--open {
   transform: translateX(0);
   visibility: visible;
   opacity: 0.95;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-xl);
   transition:
     transform 0.3s ease,
     visibility 0.3s;
+}
+
+.nav__main--open .nav__links--li {
+  border-bottom: 1px solid #8888888c;
 }
 
 .nav__links {
@@ -119,14 +126,14 @@ body {
 
 .nav__links--li a {
   display: block;
-  padding: var(--space-sm) 0; 
+  padding: var(--space-sm) 0;
 }
 
 .nav__hamburguer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative; 
+  position: relative;
   width: 30px;
   height: 20px;
   padding: 0;
@@ -144,15 +151,15 @@ body {
     opacity 0.2s;
 }
 
-.nav__hamburguer[aria-expanded="true"] span:nth-child(1) {
+.nav__hamburguer[aria-expanded='true'] span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
 
-.nav__hamburguer[aria-expanded="true"] span:nth-child(2) {
+.nav__hamburguer[aria-expanded='true'] span:nth-child(2) {
   opacity: 0;
 }
 
-.nav__hamburguer[aria-expanded="true"] span:nth-child(3) {
+.nav__hamburguer[aria-expanded='true'] span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -435,7 +442,7 @@ body {
 
 .contact__input::placeholder {
   color: var(--color-secondary);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .contact__input:focus-visible {
@@ -547,7 +554,8 @@ body {
   max-width: 320px;
   padding: var(--space-md) var(--space-md) var(--space-sm);
   background-color: var(--color-white);
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-black) 45%, transparent);
+  box-shadow: 0 12px 30px
+    color-mix(in srgb, var(--color-black) 45%, transparent);
   transform: rotate(-3deg);
   transition: transform 0.3s ease;
 }
@@ -699,7 +707,7 @@ body {
     flex-direction: row;
   }
 
-    .about__title {
+  .about__title {
     font-size: 4.5rem;
   }
 
@@ -743,7 +751,7 @@ body {
   .hero__text {
     flex: 0 0 50%;
     justify-content: center;
-    padding:var(--space-3xl);
+    padding: var(--space-3xl);
   }
 
   .hero__image {
