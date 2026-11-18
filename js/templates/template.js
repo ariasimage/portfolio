@@ -1,5 +1,7 @@
+// Plantillas reutilizables: el HTML del header y del footer vive aquí,
+// una sola vez, y main.js lo inyecta en cada página.
+
 export const header = `
-<header class="header__main">
   <a href="index.html" class="logo">JA</a>
 
   <nav class="nav__main" id="nav-principal" aria-label="Navegación principal">
@@ -64,11 +66,9 @@ export const header = `
       <span></span>
     </button>
   </div>
-</header>
 `
 
 export const footer = `
-<footer class="footer">
   <nav class="footer__nav" aria-label="Enlaces del pie de página">
     <a
       href="https://github.com/ariasimage"
@@ -89,5 +89,4 @@ export const footer = `
     Arias
   </p>
   <p>© 2026 Javier Arias · Frontend Developer · Madrid</p>
-</footer>
 `
