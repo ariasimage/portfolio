@@ -1,4 +1,5 @@
 import { header, footer } from './templates/template.js';
+import darkMode from './utils/darkMode.js';
 import menu from './utils/menu.js';
 
 // Cargar templates de header y footer
@@ -13,5 +14,6 @@ if (siteFooter) {
   siteFooter.innerHTML = footer;
 }
 
-// Inicializar funcionalidades (el menú, después de cargar el header)
+// Inicializar funcionalidades (después de cargar el header)
+darkMode();
 menu();
