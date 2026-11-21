@@ -1,5 +1,6 @@
 import { header, footer } from './templates/template.js';
 import darkMode from './utils/darkMode.js';
+import getSkills from './utils/skillsList.js';
 import menu from './utils/menu.js';
 
 // Cargar templates de header y footer
@@ -17,3 +18,4 @@ if (siteFooter) {
 // Inicializar funcionalidades (después de cargar el header)
 darkMode();
 menu();
+getSkills();
