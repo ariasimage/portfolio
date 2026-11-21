@@ -1,1 +1,200 @@
+const skills = [
+  {
+    name: 'HTML5',
+    icon: './assets/img/html.svg',
+    state: 'dominada',
+    level: 'avanzado',
+    description: 'Estructura semántica y accesible para aplicaciones web.',
+    tags: ['Semantic HTML', 'Accessibility', 'SEO'],
+  },
+  {
+    name: 'CSS3',
+    icon: './assets/img/css.svg',
+    state: 'dominada',
+    level: 'avanzado',
+    description: 'Layouts modernos, animaciones y responsive design.',
+    tags: ['Flexbox', 'Grid', 'Responsive'],
+  },
+  {
+    name: 'JavaScript',
+    icon: './assets/img/javascript.svg',
+    state: 'dominada',
+    level: 'básico',
+    description:
+      'ES6+, manipulación del DOM, async/await, fetch API, módulos y programación funcional.',
+    tags: ['ES6', 'DOM', 'Fetch API', 'Async/Await'],
+  },
+  {
+    name: 'Git',
+    icon: './assets/img/git.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description: 'Control de versiones y trabajo colaborativo.',
+    tags: ['Version Control', 'Branches', 'Commits'],
+  },
+  {
+    name: 'GitHub',
+    icon: './assets/img/github.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description: 'Repositorios remotos, pull requests y issues.',
+    tags: ['Repositories', 'PRs', 'Issues'],
+  },
+  {
+    name: 'SASS/SCSS',
+    icon: './assets/img/sass.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description: 'Preprocesador CSS con variables, mixins e includes.',
+    tags: ['Preprocessor', 'Mixins', 'Variables'],
+  },
+  {
+    name: 'Bootstrap',
+    icon: './assets/img/bootstrap.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description:
+      'Framework CSS con sistema de rejilla, componentes y utilidades responsive.',
+    tags: ['Grid', 'Components', 'Responsive'],
+  },
+  {
+    name: 'WordPress',
+    icon: './assets/img/wordpress.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description:
+      'Gestión y mantenimiento de las webs de Grupo HOLA! y de la Fundación INTHEOS: contenidos, páginas y plugins.',
+    tags: ['CMS', 'Contenidos', 'Plugins', 'Multisitio'],
+  },
+  {
+    name: 'Figma',
+    icon: './assets/img/figma.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description: 'Diseño UI y prototipado para aplicaciones.',
+    tags: ['UI', 'UX', 'Prototyping'],
+  },
+  {
+    name: 'Cool Tabs',
+    icon: './assets/img/cooltabs.png',
+    state: 'dominada',
+    level: 'avanzado',
+    description:
+      'Maquetación a medida con HTML y CSS de concursos, sorteos y quizzes interactivos para campañas de marketing.',
+    tags: ['HTML', 'CSS', 'Concursos', 'Quizzes'],
+  },
+  {
+    name: 'Docker',
+    icon: './assets/img/docker.svg',
+    state: 'dominada',
+    level: 'básico',
+    description: 'Contenedores para entornos de desarrollo consistentes.',
+    tags: ['Containers', 'DevOps', 'Images'],
+  },
+  {
+    name: 'React',
+    icon: './assets/img/react.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description:
+      'Componentes funcionales, hooks, estado, props y renderizado condicional.',
+    tags: ['Hooks', 'State', 'Props', 'SPA'],
+  },
+  {
+    name: 'Node.js',
+    icon: './assets/img/nodedotjs.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Backend con JavaScript, manejo de servidores y APIs REST.',
+    tags: ['Backend', 'APIs', 'HTTP'],
+  },
+  {
+    name: 'Express',
+    icon: './assets/img/express.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description:
+      'Framework minimalista para crear APIs y middleware en Node.js.',
+    tags: ['APIs', 'Middleware', 'Routing'],
+  },
+  {
+    name: 'SQL',
+    icon: './assets/img/mysql.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description:
+      'Consultas SQL, relaciones, joins y modelado de bases de datos.',
+    tags: ['Queries', 'Joins', 'Relational DB'],
+  },
+  {
+    name: 'MongoDB',
+    icon: './assets/img/mongodb.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Base de datos NoSQL orientada a documentos.',
+    tags: ['NoSQL', 'Documents', 'Mongoose'],
+  },
+  {
+    name: 'Astro',
+    icon: './assets/img/astro.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description:
+      'Framework moderno para sitios rápidos con enfoque en rendimiento.',
+    tags: ['Islands', 'Static Sites', 'Performance'],
+  },
 
+  {
+    name: 'TypeScript',
+    icon: 'https://cdn.simpleicons.org/typescript/3178C6',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Tipado estático para JavaScript y mayor mantenibilidad.',
+    tags: ['Types', 'Interfaces', 'Generics'],
+  },
+
+  {
+    name: 'REST API',
+    icon: './assets/img/postman.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Diseño y consumo de APIs RESTful.',
+    tags: ['HTTP', 'Endpoints', 'JSON'],
+  },
+
+  {
+    name: 'Vite',
+    icon: './assets/img/vite.svg',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Herramienta de build rápida para proyectos frontend.',
+    tags: ['Build Tool', 'Dev Server'],
+  },
+
+  {
+    name: 'Next.js',
+    icon: 'https://cdn.simpleicons.org/nextdotjs/000000',
+    state: 'en-progreso',
+    level: 'intermedio',
+    description: 'Framework React con SSR y rutas basadas en archivos.',
+    tags: ['SSR', 'Routing', 'React'],
+  },
+  {
+    name: 'Redux',
+    icon: 'https://cdn.simpleicons.org/redux/764ABC',
+    state: 'en-progreso',
+    level: 'básico-intermedio',
+    description: 'Gestión de estado global en aplicaciones React.',
+    tags: ['State Management', 'Store'],
+  },
+  {
+    name: 'Jest',
+    icon: 'https://cdn.simpleicons.org/jest/C21325',
+    state: 'en-progreso',
+    level: 'básico',
+    description: 'Testing unitario en JavaScript.',
+    tags: ['Testing', 'Unit Tests'],
+  },
+];
+
+export default skills;
