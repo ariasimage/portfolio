@@ -1,8 +1,8 @@
 import skillsData from '../data/skills.js';
 
-const getSkills = () => {
-  const skillList = document.getElementById('skills-list');
-  if (!skillList) return;
+const skillsList = () => {
+  const skillsContainer = document.getElementById('skills-list');
+  if (!skillsContainer) return;
 
   // Filtrar solo las skills dominadas
   const masteredSkills = skillsData.filter(
@@ -29,7 +29,7 @@ const getSkills = () => {
     )
     .join('');
 
-  skillList.innerHTML = skillsHTML;
+  skillsContainer.innerHTML = skillsHTML;
 };
 
-export default getSkills;
+export default skillsList;

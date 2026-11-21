@@ -41,23 +41,6 @@ const skills = [
     tags: ['Repositories', 'PRs', 'Issues'],
   },
   {
-    name: 'SASS/SCSS',
-    icon: './assets/img/sass.svg',
-    state: 'dominada',
-    level: 'intermedio',
-    description: 'Preprocesador CSS con variables, mixins e includes.',
-    tags: ['Preprocessor', 'Mixins', 'Variables'],
-  },
-  {
-    name: 'Bootstrap',
-    icon: './assets/img/bootstrap.svg',
-    state: 'dominada',
-    level: 'intermedio',
-    description:
-      'Framework CSS con sistema de rejilla, componentes y utilidades responsive.',
-    tags: ['Grid', 'Components', 'Responsive'],
-  },
-  {
     name: 'WordPress',
     icon: './assets/img/wordpress.svg',
     state: 'dominada',
@@ -82,14 +65,6 @@ const skills = [
     description:
       'Maquetación a medida con HTML y CSS de concursos, sorteos y quizzes interactivos para campañas de marketing.',
     tags: ['HTML', 'CSS', 'Concursos', 'Quizzes'],
-  },
-  {
-    name: 'Docker',
-    icon: './assets/img/docker.svg',
-    state: 'dominada',
-    level: 'básico',
-    description: 'Contenedores para entornos de desarrollo consistentes.',
-    tags: ['Containers', 'DevOps', 'Images'],
   },
   {
     name: 'React',
@@ -146,7 +121,7 @@ const skills = [
 
   {
     name: 'TypeScript',
-    icon: 'https://cdn.simpleicons.org/typescript/3178C6',
+    icon: './assets/img/typescript.svg',
     state: 'en-progreso',
     level: 'intermedio',
     description: 'Tipado estático para JavaScript y mayor mantenibilidad.',
@@ -161,7 +136,14 @@ const skills = [
     description: 'Diseño y consumo de APIs RESTful.',
     tags: ['HTTP', 'Endpoints', 'JSON'],
   },
-
+  {
+    name: 'Docker',
+    icon: './assets/img/docker.svg',
+    state: 'en-progreso',
+    level: 'básico',
+    description: 'Contenedores para entornos de desarrollo consistentes.',
+    tags: ['Containers', 'DevOps', 'Images'],
+  },
   {
     name: 'Vite',
     icon: './assets/img/vite.svg',
@@ -170,10 +152,27 @@ const skills = [
     description: 'Herramienta de build rápida para proyectos frontend.',
     tags: ['Build Tool', 'Dev Server'],
   },
-
+  {
+    name: 'SASS/SCSS',
+    icon: './assets/img/sass.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description:
+      'Preprocesador CSS con variables, mixins e includes.',
+    tags: ['Preprocessor', 'Mixins', 'Variables'],
+  },
+  {
+    name: 'Bootstrap',
+    icon: './assets/img/bootstrap.svg',
+    state: 'dominada',
+    level: 'intermedio',
+    description:
+      'Framework CSS con sistema de rejilla, componentes y utilidades responsive.',
+    tags: ['Grid', 'Components', 'Responsive'],
+  },
   {
     name: 'Next.js',
-    icon: 'https://cdn.simpleicons.org/nextdotjs/000000',
+    icon: './assets/img/nextdotjs.svg',
     state: 'en-progreso',
     level: 'intermedio',
     description: 'Framework React con SSR y rutas basadas en archivos.',
@@ -181,7 +180,7 @@ const skills = [
   },
   {
     name: 'Redux',
-    icon: 'https://cdn.simpleicons.org/redux/764ABC',
+    icon: './assets/img/redux.svg',
     state: 'en-progreso',
     level: 'básico-intermedio',
     description: 'Gestión de estado global en aplicaciones React.',
@@ -189,7 +188,7 @@ const skills = [
   },
   {
     name: 'Jest',
-    icon: 'https://cdn.simpleicons.org/jest/C21325',
+    icon: './assets/img/jest.svg',
     state: 'en-progreso',
     level: 'básico',
     description: 'Testing unitario en JavaScript.',
