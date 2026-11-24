@@ -1,17 +1,17 @@
 const cheatsheets = [
   {
     name: 'HTML5',
-    icon: 'https://cdn.simpleicons.org/html5/E34F26',
+    icon: './assets/img/html.svg',
     link: './cheatsheet-html.html',
   },
   {
     name: 'CSS3',
-    icon: 'https://cdn.simpleicons.org/css/3178C6',
+    icon: './assets/img/css.svg',
     link: './cheatsheet-css.html',
   },
   {
     name: 'JS',
-    icon: 'https://cdn.simpleicons.org/javascript/F7DF1E',
+    icon: './assets/img/javascript.svg',
     link: './cheatsheet-js.html',
   },
 ];
