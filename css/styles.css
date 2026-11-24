@@ -902,7 +902,7 @@ body {
 
   .nav__links {
     flex-direction: row;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
   }
 
   .nav__links--li a {

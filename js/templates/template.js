@@ -9,7 +9,8 @@ export const header = `
       <li class="nav__links--li"><a href="about.html">About</a></li>
       <li class="nav__links--li"><a href="index.html#skills">Skills</a></li>
       <li class="nav__links--li"><a href="index.html#projects">Projects</a></li>
-      <li class="nav__links--li"><a href="index.html#recursos">Recursos</a></li>
+      <li class="nav__links--li"><a href="index.html#cheatsheets">Cheatsheets</a></li>
+      <li class="nav__links--li"><a href="recursos.html">Recursos</a></li>
       <li class="nav__links--li"><a href="contacto.html">Contact</a></li>
     </ul>
   </nav>
@@ -66,7 +67,7 @@ export const header = `
       <span></span>
     </button>
   </div>
-`
+`;
 
 export const footer = `
   <nav class="footer__nav" aria-label="Enlaces del pie de página">
@@ -89,4 +90,4 @@ export const footer = `
     Arias
   </p>
   <p>© 2026 Javier Arias · Frontend Developer · Madrid</p>
-`
+`;

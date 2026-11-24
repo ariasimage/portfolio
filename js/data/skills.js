@@ -4,15 +4,17 @@ const skills = [
     icon: './assets/img/html.svg',
     state: 'dominada',
     level: 'avanzado',
-    description: 'Estructura semántica y accesible para aplicaciones web.',
-    tags: ['Semantic HTML', 'Accessibility', 'SEO'],
+    description:
+      'Estructura semántica, accesibilidad web y buenas bases de SEO on-page.',
+    tags: ['HTML semántico', 'Accesibilidad', 'SEO'],
   },
   {
     name: 'CSS3',
     icon: './assets/img/css.svg',
     state: 'dominada',
     level: 'avanzado',
-    description: 'Layouts modernos, animaciones y responsive design.',
+    description:
+      'Maquetación responsive, layouts modernos, transiciones y animaciones CSS.',
     tags: ['Flexbox', 'Grid', 'Responsive'],
   },
   {
@@ -21,24 +23,26 @@ const skills = [
     state: 'dominada',
     level: 'básico',
     description:
-      'ES6+, manipulación del DOM, async/await, fetch API, módulos y programación funcional.',
-    tags: ['ES6', 'DOM', 'Fetch API', 'Async/Await'],
+      'Sintaxis ES6+, manipulación del DOM, consumo de APIs con fetch, async/await y módulos.',
+    tags: ['ES6+', 'DOM', 'Fetch API', 'Async/Await'],
   },
   {
     name: 'Git',
     icon: './assets/img/git.svg',
     state: 'dominada',
     level: 'intermedio',
-    description: 'Control de versiones y trabajo colaborativo.',
-    tags: ['Version Control', 'Branches', 'Commits'],
+    description:
+      'Control de versiones, flujo de ramas y gestión de historial en proyectos.',
+    tags: ['Control de versiones', 'Ramas', 'Commits'],
   },
   {
     name: 'GitHub',
     icon: './assets/img/github.svg',
     state: 'dominada',
     level: 'intermedio',
-    description: 'Repositorios remotos, pull requests y issues.',
-    tags: ['Repositories', 'PRs', 'Issues'],
+    description:
+      'Trabajo con repositorios remotos, pull requests, issues y colaboración en equipo.',
+    tags: ['Repositorios', 'Pull Requests', 'Issues'],
   },
   {
     name: 'WordPress',
@@ -46,7 +50,7 @@ const skills = [
     state: 'dominada',
     level: 'intermedio',
     description:
-      'Gestión y mantenimiento de las webs de Grupo HOLA! y de la Fundación INTHEOS: contenidos, páginas y plugins.',
+      'Administración, actualización y mantenimiento de sitios web y gestión de contenidos.',
     tags: ['CMS', 'Contenidos', 'Plugins', 'Multisitio'],
   },
   {
@@ -54,8 +58,9 @@ const skills = [
     icon: './assets/img/figma.svg',
     state: 'dominada',
     level: 'intermedio',
-    description: 'Diseño UI y prototipado para aplicaciones.',
-    tags: ['UI', 'UX', 'Prototyping'],
+    description:
+      'Interpretación de diseños UI, inspección de estilos y prototipado de interfaces.',
+    tags: ['UI', 'Prototipado', 'Diseño web'],
   },
   {
     name: 'Cool Tabs',
@@ -63,8 +68,8 @@ const skills = [
     state: 'dominada',
     level: 'avanzado',
     description:
-      'Maquetación a medida con HTML y CSS de concursos, sorteos y quizzes interactivos para campañas de marketing.',
-    tags: ['HTML', 'CSS', 'Concursos', 'Quizzes'],
+      'Maquetación personalizada con HTML y CSS para concursos, sorteos y dinámicas interactivas de campaña.',
+    tags: ['HTML', 'CSS', 'Campañas', 'Interactivos'],
   },
   {
     name: 'React',
@@ -72,15 +77,16 @@ const skills = [
     state: 'en-progreso',
     level: 'intermedio',
     description:
-      'Componentes funcionales, hooks, estado, props y renderizado condicional.',
-    tags: ['Hooks', 'State', 'Props', 'SPA'],
+      'Desarrollo de interfaces con componentes funcionales, hooks, manejo de estado, props y renderizado condicional.',
+    tags: ['Componentes', 'Hooks', 'Estado', 'SPA'],
   },
   {
     name: 'Node.js',
     icon: './assets/img/nodedotjs.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Backend con JavaScript, manejo de servidores y APIs REST.',
+    description:
+      'Entorno JavaScript en servidor para crear servicios backend, rutas HTTP y APIs.',
     tags: ['Backend', 'APIs', 'HTTP'],
   },
   {
@@ -89,7 +95,7 @@ const skills = [
     state: 'en-progreso',
     level: 'intermedio',
     description:
-      'Framework minimalista para crear APIs y middleware en Node.js.',
+      'Framework ligero para Node.js orientado al enrutamiento, middlewares y construcción de APIs.',
     tags: ['APIs', 'Middleware', 'Routing'],
   },
   {
@@ -98,16 +104,17 @@ const skills = [
     state: 'en-progreso',
     level: 'intermedio',
     description:
-      'Consultas SQL, relaciones, joins y modelado de bases de datos.',
-    tags: ['Queries', 'Joins', 'Relational DB'],
+      'Diseño de esquemas relacionales, consultas, relaciones y joins en bases de datos.',
+    tags: ['Consultas', 'Joins', 'Relacional'],
   },
   {
     name: 'MongoDB',
     icon: './assets/img/mongodb.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Base de datos NoSQL orientada a documentos.',
-    tags: ['NoSQL', 'Documents', 'Mongoose'],
+    description:
+      'Almacenamiento de datos NoSQL basado en documentos y modelado con esquemas.',
+    tags: ['NoSQL', 'Documentos', 'Mongoose'],
   },
   {
     name: 'Astro',
@@ -115,25 +122,25 @@ const skills = [
     state: 'en-progreso',
     level: 'intermedio',
     description:
-      'Framework moderno para sitios rápidos con enfoque en rendimiento.',
-    tags: ['Islands', 'Static Sites', 'Performance'],
+      'Framework web enfocado en sitios rápidos, bajo peso de JavaScript y arquitectura de islas.',
+    tags: ['Islas', 'Rendimiento', 'Sitios estáticos'],
   },
-
   {
     name: 'TypeScript',
     icon: './assets/img/typescript.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Tipado estático para JavaScript y mayor mantenibilidad.',
-    tags: ['Types', 'Interfaces', 'Generics'],
+    description:
+      'Tipado estático sobre JavaScript para mejorar la legibilidad, el autocompletado y el mantenimiento.',
+    tags: ['Tipos', 'Interfaces', 'Genéricos'],
   },
-
   {
     name: 'REST API',
     icon: './assets/img/postman.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Diseño y consumo de APIs RESTful.',
+    description:
+      'Consumo y diseño de endpoints RESTful con métodos HTTP y formato JSON.',
     tags: ['HTTP', 'Endpoints', 'JSON'],
   },
   {
@@ -141,16 +148,18 @@ const skills = [
     icon: './assets/img/docker.svg',
     state: 'en-progreso',
     level: 'básico',
-    description: 'Contenedores para entornos de desarrollo consistentes.',
-    tags: ['Containers', 'DevOps', 'Images'],
+    description:
+      'Uso de contenedores e imágenes para estandarizar entornos de desarrollo y ejecución.',
+    tags: ['Contenedores', 'Imágenes', 'Entornos'],
   },
   {
     name: 'Vite',
     icon: './assets/img/vite.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Herramienta de build rápida para proyectos frontend.',
-    tags: ['Build Tool', 'Dev Server'],
+    description:
+      'Empaquetador y servidor de desarrollo rápido para aplicaciones frontend modernas.',
+    tags: ['Build', 'Dev Server', 'Bundler'],
   },
   {
     name: 'SASS/SCSS',
@@ -158,8 +167,8 @@ const skills = [
     state: 'dominada',
     level: 'intermedio',
     description:
-      'Preprocesador CSS con variables, mixins e includes.',
-    tags: ['Preprocessor', 'Mixins', 'Variables'],
+      'Preprocesador CSS para organizar estilos mediante variables, mixins, partials y anidación.',
+    tags: ['Preprocesador', 'Mixins', 'Variables'],
   },
   {
     name: 'Bootstrap',
@@ -167,15 +176,16 @@ const skills = [
     state: 'dominada',
     level: 'intermedio',
     description:
-      'Framework CSS con sistema de rejilla, componentes y utilidades responsive.',
-    tags: ['Grid', 'Components', 'Responsive'],
+      'Maquetación ágil con sistema de rejilla, componentes predefinidos y utilidades responsive.',
+    tags: ['Grid', 'Componentes', 'Responsive'],
   },
   {
     name: 'Next.js',
     icon: './assets/img/nextdotjs.svg',
     state: 'en-progreso',
     level: 'intermedio',
-    description: 'Framework React con SSR y rutas basadas en archivos.',
+    description:
+      'Framework sobre React con enrutado basado en archivos, renderizado en servidor y optimización web.',
     tags: ['SSR', 'Routing', 'React'],
   },
   {
@@ -183,16 +193,18 @@ const skills = [
     icon: './assets/img/redux.svg',
     state: 'en-progreso',
     level: 'básico-intermedio',
-    description: 'Gestión de estado global en aplicaciones React.',
-    tags: ['State Management', 'Store'],
+    description:
+      'Gestión centralizada y predecible del estado global en aplicaciones React.',
+    tags: ['Estado global', 'Store'],
   },
   {
     name: 'Jest',
     icon: './assets/img/jest.svg',
     state: 'en-progreso',
     level: 'básico',
-    description: 'Testing unitario en JavaScript.',
-    tags: ['Testing', 'Unit Tests'],
+    description:
+      'Pruebas unitarias en JavaScript para verificar el comportamiento de funciones y lógica.',
+    tags: ['Testing', 'Pruebas unitarias'],
   },
 ];
 
