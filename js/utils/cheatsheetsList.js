@@ -4,7 +4,6 @@ const cheatsheetsList = () => {
   const cheatsheetsContainer = document.getElementById('cheatsheets-list');
   if (!cheatsheetsContainer) return;
 
-  // Cada card completa es un enlace a la página de su cheatsheet
   const cheatsheetsHTML = cheatsheetsData
     .map(
       (cheatsheet) => `
@@ -15,6 +14,7 @@ const cheatsheetsList = () => {
             alt=""
           />
           <h3 class="cheatsheet__name">${cheatsheet.name}</h3>
+          <p>Guía rápida de referencia</p>
         </a>
     `,
     )

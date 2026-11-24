@@ -77,6 +77,7 @@ body {
   z-index: 1000;
   padding: var(--space-md) var(--space-xl);
   border-bottom: 1px solid var(--color-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .nav__main {
@@ -559,7 +560,7 @@ body {
   flex: 0 0 auto;
   width: 100%;
   max-width: 320px;
-  padding: var(--space-md) var(--space-md) var(--space-sm);
+  padding: var(--space-sm);
   background-color: var(--color-white);
   box-shadow: 0 12px 30px
     color-mix(in srgb, var(--color-black) 45%, transparent);
@@ -744,6 +745,8 @@ body {
 .cheatsheet__card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-md);
   flex: 1 1 calc(33.333% - var(--space-lg));
   min-width: 220px;
@@ -764,8 +767,8 @@ body {
 }
 
 .cheatsheet__icon {
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -923,6 +926,7 @@ body {
 .dark-mode .cheatsheet__card {
   border-color: var(--dm-border);
   background-color: var(--dm-surface);
+  color: var(--dm-text);
 }
 
 .dark-mode .cheatsheet__name {
