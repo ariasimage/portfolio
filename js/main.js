@@ -2,6 +2,7 @@ import { header, footer } from './templates/template.js';
 import darkMode from './utils/darkMode.js';
 import menu from './utils/menu.js';
 import skillsList from './utils/skillsList.js';
+import cheatsheetsList from './utils/cheatsheetsList.js';
 
 // Cargar templates de header y footer
 const siteHeader = document.querySelector('header');
@@ -19,3 +20,4 @@ if (siteFooter) {
 darkMode();
 menu();
 skillsList();
+cheatsheetsList();

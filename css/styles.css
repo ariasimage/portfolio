@@ -733,6 +733,49 @@ body {
   color: var(--color-dark);
 }
 
+/* CHEATSHEETS */
+
+.cheatsheets__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.cheatsheet__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex: 1 1 calc(33.333% - var(--space-lg));
+  min-width: 220px;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-light);
+  background-color: var(--color-light);
+  color: var(--color-text);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cheatsheet__card:hover,
+.cheatsheet__card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px
+    color-mix(in srgb, var(--color-black) 45%, transparent);
+}
+
+.cheatsheet__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.cheatsheet__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
 /* MODO OSCURO */
 
 .header__actions {
@@ -877,7 +920,15 @@ body {
   color: var(--dm-text);
 }
 
-/* Iconos casi negros: en modo oscuro se pasan a blanco */
+.dark-mode .cheatsheet__card {
+  border-color: var(--dm-border);
+  background-color: var(--dm-surface);
+}
+
+.dark-mode .cheatsheet__name {
+  color: var(--dm-text);
+}
+
 .dark-mode .skill__icon img[src*='github'] {
   filter: brightness(0) invert(1);
 }
