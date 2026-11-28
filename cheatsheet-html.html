@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Javier Arias, desarrollador full stack"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/z6bhb6c7/image/upload/v1793443373/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Cheatsheet HTML5 | Javier Arias</title>
+  </head>
+  <body>
+    <header class="header__main"></header>
+
+    <main class="main--grow cheatsheet__page">
+      <nav class="cheatsheet__nav" aria-label="Índice de la cheatsheet">
+        <ul class="cheatsheet__nav-list">
+          <li><a class="cheatsheet__nav-link" href="#estructura">Estructura</a></li>
+          <li><a class="cheatsheet__nav-link" href="#texto">Texto</a></li>
+          <li><a class="cheatsheet__nav-link" href="#enlaces-imagenes">Enlaces</a></li>
+          <li><a class="cheatsheet__nav-link" href="#listas">Listas</a></li>
+          <li><a class="cheatsheet__nav-link" href="#semantica">Semántica</a></li>
+          <li><a class="cheatsheet__nav-link" href="#formularios">Formularios</a></li>
+          <li><a class="cheatsheet__nav-link" href="#tablas">Tablas</a></li>
+          <li><a class="cheatsheet__nav-link" href="#multimedia">Multimedia</a></li>
+          <li><a class="cheatsheet__nav-link" href="#atributos">Atributos</a></li>
+          <li><a class="cheatsheet__nav-link" href="#buenas-practicas">Prácticas</a></li>
+        </ul>
+      </nav>
+
+      <div class="cheatsheet">
+        <article class="cheatsheet__content">
+          <header class="cheatsheet__header">
+            <p class="section__label cheatsheet__tag">— Cheat Sheet</p>
+            <h1 class="cheatsheet__title">HTML5</h1>
+            <p class="cheatsheet__intro">
+              Guía rápida de las etiquetas y atributos más usados de HTML5, con
+              ejemplos listos para copiar.
+            </p>
+          </header>
+
+        <section class="cheatsheet__section" id="estructura">
+          <h2 class="cheatsheet__section-title">Estructura básica</h2>
+          <p class="cheatsheet__desc">Todo documento HTML5 sigue el mismo esqueleto: declaración del tipo de documento, idioma, cabecera con metadatos y cuerpo con el contenido visible.</p>
+          <pre class="cheatsheet__code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script type="module" src="js/main.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>&lt;!DOCTYPE html&gt;</code> activa el modo estándar del navegador.</li>
+            <li>El atributo <code>lang</code> ayuda a los lectores de pantalla y a los buscadores.</li>
+            <li>El meta <code>viewport</code> es imprescindible para que la web sea responsive.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="texto">
+          <h2 class="cheatsheet__section-title">Texto y encabezados</h2>
+          <p class="cheatsheet__desc">Los encabezados estructuran el contenido por niveles y los elementos de texto aportan significado, no solo aspecto.</p>
+          <pre class="cheatsheet__code"><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;p&gt;Un párrafo con &lt;strong&gt;importancia&lt;/strong&gt; y &lt;em&gt;énfasis&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Línea uno&lt;br /&gt;Línea dos&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;Una cita textual.&lt;/blockquote&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Usa un solo <code>&lt;h1&gt;</code> por página y no saltes niveles (h2 → h4).</li>
+            <li><code>&lt;strong&gt;</code> y <code>&lt;em&gt;</code> expresan importancia y énfasis; para el aspecto usa CSS.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="enlaces-imagenes">
+          <h2 class="cheatsheet__section-title">Enlaces e imágenes</h2>
+          <p class="cheatsheet__desc">Los enlaces conectan páginas y recursos; las imágenes necesitan siempre un texto alternativo.</p>
+          <pre class="cheatsheet__code"><code>&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+&lt;a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer"&gt;MDN&lt;/a&gt;
+&lt;a href="mailto:hola@ejemplo.com"&gt;Escríbeme&lt;/a&gt;
+
+&lt;img src="img/foto.jpg" alt="Descripción de la imagen" width="400" height="300" loading="lazy" /&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Con <code>target="_blank"</code> añade siempre <code>rel="noopener noreferrer"</code>.</li>
+            <li>Un <code>alt</code> descriptivo mejora la accesibilidad; si la imagen es decorativa, déjalo vacío (<code>alt=""</code>).</li>
+            <li><code>width</code> y <code>height</code> evitan saltos de diseño mientras carga la imagen.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="listas">
+          <h2 class="cheatsheet__section-title">Listas</h2>
+          <p class="cheatsheet__desc">Hay tres tipos de listas: sin orden, ordenadas y de definiciones.</p>
+          <pre class="cheatsheet__code"><code>&lt;ul&gt;
+  &lt;li&gt;Elemento sin orden&lt;/li&gt;
+  &lt;li&gt;Otro elemento&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primer paso&lt;/li&gt;
+  &lt;li&gt;Segundo paso&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado de la web&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Los menús de navegación suelen ser listas <code>&lt;ul&gt;</code> de enlaces.</li>
+            <li>Solo los <code>&lt;li&gt;</code> deben ser hijos directos de <code>&lt;ul&gt;</code> y <code>&lt;ol&gt;</code>.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="semantica">
+          <h2 class="cheatsheet__section-title">Etiquetas semánticas</h2>
+          <p class="cheatsheet__desc">Describen el papel de cada zona de la página, a diferencia de &lt;div&gt; y &lt;span&gt;, que no tienen significado.</p>
+          <pre class="cheatsheet__code"><code>&lt;header&gt;Cabecera del sitio&lt;/header&gt;
+&lt;nav&gt;Navegación principal&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Sección&lt;/h2&gt;
+    &lt;article&gt;Contenido independiente&lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;Contenido relacionado&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Solo debe haber un <code>&lt;main&gt;</code> visible por página.</li>
+            <li>Una <code>&lt;section&gt;</code> debería llevar un encabezado.</li>
+            <li>La semántica mejora el SEO y la navegación con lector de pantalla.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="formularios">
+          <h2 class="cheatsheet__section-title">Formularios</h2>
+          <p class="cheatsheet__desc">Permiten recoger datos del usuario. Cada control necesita su etiqueta asociada.</p>
+          <pre class="cheatsheet__code"><code>&lt;form action="/enviar" method="post"&gt;
+  &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre" required /&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required /&gt;
+
+  &lt;label for="motivo"&gt;Motivo&lt;/label&gt;
+  &lt;select id="motivo" name="motivo"&gt;
+    &lt;option value="proyecto"&gt;Proyecto&lt;/option&gt;
+    &lt;option value="otro"&gt;Otro&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for="mensaje"&gt;Mensaje&lt;/label&gt;
+  &lt;textarea id="mensaje" name="mensaje" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Enlaza cada <code>&lt;label&gt;</code> con su control mediante <code>for</code> e <code>id</code>.</li>
+            <li>El <code>type</code> correcto (email, tel, number…) activa el teclado adecuado en móvil.</li>
+            <li><code>required</code> y <code>pattern</code> dan validación nativa sin JavaScript.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="tablas">
+          <h2 class="cheatsheet__section-title">Tablas</h2>
+          <p class="cheatsheet__desc">Sirven para mostrar datos tabulares, no para maquetar la página.</p>
+          <pre class="cheatsheet__code"><code>&lt;table&gt;
+  &lt;caption&gt;Lenguajes del bootcamp&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Lenguaje&lt;/th&gt;
+      &lt;th scope="col"&gt;Uso&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;Estructura&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;Estilos&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>&lt;caption&gt;</code> describe la tabla y <code>scope</code> indica si un <code>&lt;th&gt;</code> es de columna o de fila.</li>
+            <li>Separar <code>&lt;thead&gt;</code> y <code>&lt;tbody&gt;</code> facilita el estilo y la accesibilidad.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="multimedia">
+          <h2 class="cheatsheet__section-title">Multimedia</h2>
+          <p class="cheatsheet__desc">Audio, vídeo e imágenes adaptables se incrustan con etiquetas nativas.</p>
+          <pre class="cheatsheet__code"><code>&lt;video src="video.mp4" controls width="480"&gt;&lt;/video&gt;
+
+&lt;audio src="audio.mp3" controls&gt;&lt;/audio&gt;
+
+&lt;picture&gt;
+  &lt;source srcset="img/foto.webp" type="image/webp" /&gt;
+  &lt;img src="img/foto.jpg" alt="Descripción" /&gt;
+&lt;/picture&gt;
+
+&lt;iframe src="https://example.com" title="Página de ejemplo"&gt;&lt;/iframe&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Añade <code>controls</code> para que el usuario pueda reproducir y pausar.</li>
+            <li><code>&lt;picture&gt;</code> permite ofrecer formatos modernos con un respaldo.</li>
+            <li>Todo <code>&lt;iframe&gt;</code> necesita un atributo <code>title</code>.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="atributos">
+          <h2 class="cheatsheet__section-title">Atributos globales</h2>
+          <p class="cheatsheet__desc">Se pueden usar en cualquier etiqueta HTML.</p>
+          <pre class="cheatsheet__code"><code>&lt;div id="tarjeta" class="card destacada" title="Ayuda" data-id="42" hidden&gt;
+  Contenido
+&lt;/div&gt;
+
+&lt;button tabindex="0" aria-label="Cerrar menú"&gt;×&lt;/button&gt;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>id</code> debe ser único; <code>class</code> puede repetirse.</li>
+            <li><code>data-*</code> guarda datos propios que se leen desde JavaScript con <code>dataset</code>.</li>
+            <li><code>aria-label</code> da nombre accesible a controles sin texto visible.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="buenas-practicas">
+          <h2 class="cheatsheet__section-title">Buenas prácticas</h2>
+          <p class="cheatsheet__desc">Hábitos que mantienen el HTML limpio, accesible y fácil de mantener.</p>
+          <ul class="cheatsheet__tips">
+            <li>Usa la etiqueta semántica adecuada antes de recurrir a <code>&lt;div&gt;</code>.</li>
+            <li>Escribe las etiquetas y atributos en minúsculas y usa comillas dobles.</li>
+            <li>Indenta con dos espacios y cierra siempre las etiquetas.</li>
+            <li>Valida el código con el validador del W3C y comprueba la accesibilidad.</li>
+            <li>Separa estructura (HTML), estilo (CSS) y comportamiento (JS).</li>
+          </ul>
+        </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

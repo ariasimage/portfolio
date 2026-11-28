@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Javier Arias, desarrollador full stack"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/z6bhb6c7/image/upload/v1793443373/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Cheatsheet JavaScript | Javier Arias</title>
+  </head>
+  <body>
+    <header class="header__main"></header>
+
+    <main class="main--grow cheatsheet__page">
+      <nav class="cheatsheet__nav" aria-label="Índice de la cheatsheet">
+        <ul class="cheatsheet__nav-list">
+          <li><a class="cheatsheet__nav-link" href="#variables">Variables</a></li>
+          <li><a class="cheatsheet__nav-link" href="#operadores">Operadores</a></li>
+          <li><a class="cheatsheet__nav-link" href="#control">Control</a></li>
+          <li><a class="cheatsheet__nav-link" href="#funciones">Funciones</a></li>
+          <li><a class="cheatsheet__nav-link" href="#arrays">Arrays</a></li>
+          <li><a class="cheatsheet__nav-link" href="#objetos">Objetos</a></li>
+          <li><a class="cheatsheet__nav-link" href="#dom">DOM</a></li>
+          <li><a class="cheatsheet__nav-link" href="#eventos">Eventos</a></li>
+          <li><a class="cheatsheet__nav-link" href="#asincronia">Async</a></li>
+          <li><a class="cheatsheet__nav-link" href="#modulos">Módulos</a></li>
+        </ul>
+      </nav>
+
+      <div class="cheatsheet">
+        <article class="cheatsheet__content">
+          <header class="cheatsheet__header">
+            <p class="section__label cheatsheet__tag">— Cheat Sheet</p>
+            <h1 class="cheatsheet__title">JavaScript</h1>
+            <p class="cheatsheet__intro">
+              Guía rápida de JavaScript moderno: variables, funciones, arrays, objetos, manipulación del DOM, eventos, asincronía y módulos.
+            </p>
+          </header>
+
+        <section class="cheatsheet__section" id="variables">
+          <h2 class="cheatsheet__section-title">Variables y tipos de datos</h2>
+          <p class="cheatsheet__desc">Con const y let se declaran variables; los datos pueden ser primitivos u objetos.</p>
+          <pre class="cheatsheet__code"><code>const nombre = 'Javier';   // no se puede reasignar
+let edad = 30;             // se puede reasignar
+edad = 31;
+
+// Template literals
+const saludo = `Hola, ${nombre}. Tienes ${edad} años.`;
+
+// Tipos de datos
+typeof 'texto';     // 'string'
+typeof 42;          // 'number'
+typeof true;        // 'boolean'
+typeof undefined;   // 'undefined'
+typeof null;        // 'object' (rareza histórica)
+typeof [];          // 'object'
+typeof {};          // 'object'
+Array.isArray([]);  // true</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Usa <code>const</code> por defecto y <code>let</code> solo cuando el valor va a cambiar. Evita <code>var</code>.</li>
+            <li>Los template literals (comillas invertidas) permiten insertar expresiones con <code>${}</code>.</li>
+            <li><code>typeof null</code> devuelve <code>"object"</code>; para arrays usa <code>Array.isArray()</code>.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="operadores">
+          <h2 class="cheatsheet__section-title">Operadores</h2>
+          <p class="cheatsheet__desc">Aritméticos, de comparación, lógicos y los operadores modernos para valores nulos.</p>
+          <pre class="cheatsheet__code"><code>// Aritméticos
+5 + 2;  5 - 2;  5 * 2;  5 / 2;  5 % 2;  5 ** 2;
+
+// Comparación
+5 == '5';    // true  (compara solo el valor)
+5 === '5';   // false (valor y tipo)
+5 !== 6;     // true
+
+// Lógicos
+true &amp;&amp; false;   // false
+true || false;   // true
+!true;           // false
+
+// Operadores modernos
+const nombre = usuario?.nombre ?? 'Anónimo';
+let contador = 0;
+contador += 1;
+contador++;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Usa siempre <code>===</code> y <code>!==</code>: evitan conversiones de tipo inesperadas.</li>
+            <li><code>?.</code> (encadenamiento opcional) evita errores al leer propiedades de <code>null</code> o <code>undefined</code>.</li>
+            <li><code>??</code> solo usa el valor de la derecha si la izquierda es <code>null</code> o <code>undefined</code>, no con <code>0</code> o <code>""</code>.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="control">
+          <h2 class="cheatsheet__section-title">Condicionales y bucles</h2>
+          <p class="cheatsheet__desc">Estructuras para decidir qué código se ejecuta y para repetirlo.</p>
+          <pre class="cheatsheet__code"><code>if (edad &gt;= 18) {
+  console.log('Adulto');
+} else if (edad &gt;= 13) {
+  console.log('Adolescente');
+} else {
+  console.log('Niño');
+}
+
+const mensaje = edad &gt;= 18 ? 'Adulto' : 'Menor';
+
+switch (dia) {
+  case 'lunes':
+    console.log('Empieza la semana');
+    break;
+  default:
+    console.log('Otro día');
+}
+
+for (let i = 0; i &lt; 3; i++) { console.log(i); }
+for (const fruta of frutas) { console.log(fruta); }
+for (const clave in usuario) { console.log(clave); }
+while (contador &lt; 5) { contador++; }</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>for...of</code> recorre valores (arrays, strings) y <code>for...in</code> recorre claves de un objeto.</li>
+            <li>Recuerda el <code>break</code> en cada <code>case</code> del <code>switch</code> para evitar que continúe con el siguiente.</li>
+            <li>Valores falsy: <code>false</code>, <code>0</code>, <code>""</code>, <code>null</code>, <code>undefined</code> y <code>NaN</code>.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="funciones">
+          <h2 class="cheatsheet__section-title">Funciones</h2>
+          <p class="cheatsheet__desc">Bloques de código reutilizables con distintas formas de declararlos.</p>
+          <pre class="cheatsheet__code"><code>function sumar(a, b) {
+  return a + b;
+}
+
+const restar = function (a, b) {
+  return a - b;
+};
+
+const multiplicar = (a, b) =&gt; a * b;
+
+const saludar = (nombre = 'invitado') =&gt; `Hola, ${nombre}`;
+
+const total = (...numeros) =&gt;
+  numeros.reduce((acumulado, n) =&gt; acumulado + n, 0);
+
+total(1, 2, 3);   // 6</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Las arrow functions con una sola expresión devuelven el valor sin escribir <code>return</code>.</li>
+            <li>Las arrow functions no tienen su propio <code>this</code>.</li>
+            <li>Los parámetros por defecto y el operador rest (<code>...</code>) simplifican funciones con argumentos variables.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="arrays">
+          <h2 class="cheatsheet__section-title">Arrays</h2>
+          <p class="cheatsheet__desc">Listas ordenadas con métodos para añadir, buscar y transformar elementos.</p>
+          <pre class="cheatsheet__code"><code>const frutas = ['manzana', 'pera', 'uva'];
+
+frutas.push('kiwi');      // añade al final
+frutas.pop();             // quita el último
+frutas.length;            // 3
+
+frutas.map((f) =&gt; f.toUpperCase());
+frutas.filter((f) =&gt; f.length &gt; 4);
+frutas.find((f) =&gt; f === 'pera');
+frutas.includes('uva');   // true
+[1, 2, 3].reduce((acc, n) =&gt; acc + n, 0);   // 6
+frutas.forEach((f) =&gt; console.log(f));
+
+const copia = [...frutas, 'melón'];
+const [primera, segunda] = frutas;</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>map</code>, <code>filter</code> y <code>reduce</code> devuelven un resultado nuevo y no modifican el array original.</li>
+            <li><code>push</code> y <code>pop</code> sí modifican el array.</li>
+            <li>El operador spread (<code>...</code>) copia arrays y la desestructuración extrae elementos por posición.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="objetos">
+          <h2 class="cheatsheet__section-title">Objetos y JSON</h2>
+          <p class="cheatsheet__desc">Colecciones de pares clave-valor para representar entidades.</p>
+          <pre class="cheatsheet__code"><code>const usuario = {
+  nombre: 'Ana',
+  edad: 28,
+  saludar() {
+    return `Hola, soy ${this.nombre}`;
+  },
+};
+
+usuario.nombre;            // notación de punto
+usuario['edad'];           // notación de corchetes
+usuario.email = 'ana@ejemplo.com';
+delete usuario.edad;
+
+const { nombre, email } = usuario;
+const copia = { ...usuario, activo: true };
+
+Object.keys(usuario);
+Object.values(usuario);
+Object.entries(usuario);
+
+const texto = JSON.stringify(usuario);
+const objeto = JSON.parse(texto);</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>La desestructuración (<code>const { nombre } = usuario</code>) extrae propiedades en una línea.</li>
+            <li><code>Object.entries()</code> devuelve un array de pares <code>[clave, valor]</code> fácil de recorrer.</li>
+            <li><code>JSON.stringify</code> y <code>JSON.parse</code> convierten entre objetos y texto.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="dom">
+          <h2 class="cheatsheet__section-title">Manipular el DOM</h2>
+          <p class="cheatsheet__desc">Seleccionar, crear y modificar los elementos de la página desde JavaScript.</p>
+          <pre class="cheatsheet__code"><code>const titulo = document.querySelector('.titulo');
+const items = document.querySelectorAll('.item');
+const menu = document.getElementById('menu');
+
+titulo.textContent = 'Nuevo título';
+contenedor.innerHTML = `&lt;p&gt;${texto}&lt;/p&gt;`;
+
+const parrafo = document.createElement('p');
+parrafo.textContent = 'Hola';
+contenedor.append(parrafo);
+
+titulo.classList.add('activo');
+titulo.classList.remove('activo');
+titulo.classList.toggle('oculto');
+
+titulo.setAttribute('aria-label', 'Menú');
+titulo.getAttribute('aria-label');</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>querySelector</code> acepta cualquier selector CSS y devuelve el primer elemento; <code>querySelectorAll</code> devuelve todos.</li>
+            <li>Prefiere <code>textContent</code> a <code>innerHTML</code> cuando insertes texto de usuario: evita inyección de código.</li>
+            <li>Gestiona las clases con <code>classList</code> en lugar de editar <code>className</code> a mano.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="eventos">
+          <h2 class="cheatsheet__section-title">Eventos</h2>
+          <p class="cheatsheet__desc">Permiten reaccionar a las acciones del usuario: clics, teclas, envío de formularios…</p>
+          <pre class="cheatsheet__code"><code>boton.addEventListener('click', (evento) =&gt; {
+  console.log(evento.target);
+});
+
+formulario.addEventListener('submit', (evento) =&gt; {
+  evento.preventDefault();   // evita recargar la página
+});
+
+document.addEventListener('DOMContentLoaded', () =&gt; {
+  console.log('DOM listo');
+});
+
+// Delegación de eventos
+lista.addEventListener('click', (evento) =&gt; {
+  if (evento.target.matches('.item')) {
+    console.log('Clic en un item');
+  }
+});
+
+window.addEventListener('keydown', (evento) =&gt; {
+  if (evento.key === 'Escape') cerrarMenu();
+});</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>preventDefault()</code> cancela el comportamiento por defecto, por ejemplo el envío de un formulario.</li>
+            <li>Con la delegación escuchas en el contenedor y funciona también con elementos creados después.</li>
+            <li>Usa <code>addEventListener</code> en lugar de atributos como <code>onclick</code> en el HTML.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="asincronia">
+          <h2 class="cheatsheet__section-title">Asincronía y fetch</h2>
+          <p class="cheatsheet__desc">Las operaciones que tardan (peticiones, temporizadores) no bloquean el resto del código.</p>
+          <pre class="cheatsheet__code"><code>// Promesas
+fetch('https://api.ejemplo.com/datos')
+  .then((respuesta) =&gt; respuesta.json())
+  .then((datos) =&gt; console.log(datos))
+  .catch((error) =&gt; console.error(error));
+
+// async / await
+const cargarDatos = async () =&gt; {
+  try {
+    const respuesta = await fetch('https://api.ejemplo.com/datos');
+    if (!respuesta.ok) throw new Error(`Error ${respuesta.status}`);
+    return await respuesta.json();
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+setTimeout(() =&gt; console.log('Pasado 1 segundo'), 1000);</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>fetch</code> solo rechaza la promesa ante errores de red: comprueba <code>respuesta.ok</code> para errores HTTP.</li>
+            <li><code>await</code> solo puede usarse dentro de una función <code>async</code> (o en el nivel superior de un módulo).</li>
+            <li>Envuelve el código con <code>await</code> en <code>try...catch</code> para gestionar los errores.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="modulos">
+          <h2 class="cheatsheet__section-title">Módulos y localStorage</h2>
+          <p class="cheatsheet__desc">Los módulos dividen el código en archivos; localStorage guarda datos en el navegador.</p>
+          <pre class="cheatsheet__code"><code>// data/skills.js
+const skills = [{ name: 'HTML' }, { name: 'CSS' }];
+export default skills;
+export const total = skills.length;
+
+// main.js
+import listaSkills, { total as totalSkills } from './data/skills.js';
+
+// localStorage (solo guarda texto)
+localStorage.setItem('theme', 'dark');
+localStorage.getItem('theme');      // 'dark'
+localStorage.removeItem('theme');
+
+localStorage.setItem('usuario', JSON.stringify({ nombre: 'Ana' }));
+const usuario = JSON.parse(localStorage.getItem('usuario'));</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Para usar módulos carga el script con <code>type="module"</code> y abre la web desde un servidor (no con <code>file://</code>).</li>
+            <li>Un archivo solo puede tener un <code>export default</code>, pero varios <code>export</code> con nombre; con <code>as</code> renombras lo que importas.</li>
+            <li>localStorage conserva los datos entre sesiones y solo guarda strings: usa <code>JSON.stringify</code> y <code>JSON.parse</code>.</li>
+          </ul>
+        </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

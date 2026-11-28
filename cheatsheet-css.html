@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Javier Arias, desarrollador full stack"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/z6bhb6c7/image/upload/v1793443373/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Cheatsheet CSS3 | Javier Arias</title>
+  </head>
+  <body>
+    <header class="header__main"></header>
+
+    <main class="main--grow cheatsheet__page">
+      <nav class="cheatsheet__nav" aria-label="Índice de la cheatsheet">
+        <ul class="cheatsheet__nav-list">
+          <li><a class="cheatsheet__nav-link" href="#selectores">Selectores</a></li>
+          <li><a class="cheatsheet__nav-link" href="#caja">Caja</a></li>
+          <li><a class="cheatsheet__nav-link" href="#tipografia">Tipografía</a></li>
+          <li><a class="cheatsheet__nav-link" href="#colores">Colores</a></li>
+          <li><a class="cheatsheet__nav-link" href="#posicion">Posición</a></li>
+          <li><a class="cheatsheet__nav-link" href="#flexbox">Flexbox</a></li>
+          <li><a class="cheatsheet__nav-link" href="#grid">Grid</a></li>
+          <li><a class="cheatsheet__nav-link" href="#responsive">Responsive</a></li>
+          <li><a class="cheatsheet__nav-link" href="#variables">Variables</a></li>
+          <li><a class="cheatsheet__nav-link" href="#animaciones">Animaciones</a></li>
+        </ul>
+      </nav>
+
+      <div class="cheatsheet">
+        <article class="cheatsheet__content">
+          <header class="cheatsheet__header">
+            <p class="section__label cheatsheet__tag">— Cheat Sheet</p>
+            <h1 class="cheatsheet__title">CSS3</h1>
+            <p class="cheatsheet__intro">
+              Guía rápida de las propiedades y técnicas más usadas de CSS3: selectores, caja, layout con Flexbox y Grid, responsive, variables y animaciones.
+            </p>
+          </header>
+
+        <section class="cheatsheet__section" id="selectores">
+          <h2 class="cheatsheet__section-title">Selectores</h2>
+          <p class="cheatsheet__desc">Los selectores indican a qué elementos se aplican los estilos. Se pueden combinar para ser más precisos.</p>
+          <pre class="cheatsheet__code"><code>/* Etiqueta, clase e id */
+p { color: #333; }
+.card { padding: 1rem; }
+#cabecera { position: sticky; }
+
+/* Combinadores */
+.menu a { color: #0f0f0f; }   /* descendiente */
+.menu &gt; li { display: flex; } /* hijo directo */
+h2 + p { margin-top: 0; }     /* hermano adyacente */
+h2 ~ p { color: #555; }       /* hermanos siguientes */
+
+/* Pseudo-clases y pseudo-elementos */
+a:hover { text-decoration: underline; }
+li:nth-child(odd) { background: #eee; }
+input:focus-visible { outline: 2px solid #0f0f0f; }
+.boton::after { content: ' →'; }</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>La especificidad va de menos a más: etiqueta &lt; clase &lt; id. Evita <code>!important</code>.</li>
+            <li>Puedes agrupar selectores con comas para compartir reglas: <code>h1, h2, h3 { ... }</code>.</li>
+            <li>Las pseudo-clases usan <code>:</code> (estado) y los pseudo-elementos <code>::</code> (parte del elemento).</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="caja">
+          <h2 class="cheatsheet__section-title">Modelo de caja</h2>
+          <p class="cheatsheet__desc">Cada elemento es una caja formada por contenido, padding, borde y margen.</p>
+          <pre class="cheatsheet__code"><code>.card {
+  width: 300px;
+  padding: 1rem;
+  border: 1px solid #0f0f0f;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Valores abreviados */
+margin: 10px 20px;                /* vertical | horizontal */
+margin: 10px 20px 30px 40px;      /* arriba | derecha | abajo | izquierda */
+padding: 0 1rem;
+
+/* Reset habitual */
+*, *::before, *::after { box-sizing: border-box; }</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Con <code>box-sizing: border-box</code> el ancho incluye el padding y el borde.</li>
+            <li><code>margin: 0 auto</code> centra horizontalmente un bloque con ancho definido.</li>
+            <li>Los márgenes verticales contiguos pueden colapsar; el padding nunca lo hace.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="tipografia">
+          <h2 class="cheatsheet__section-title">Tipografía</h2>
+          <p class="cheatsheet__desc">Propiedades para controlar el aspecto y la legibilidad del texto.</p>
+          <pre class="cheatsheet__code"><code>body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Usa <code>rem</code> para los tamaños de texto: respetan la configuración del usuario.</li>
+            <li><code>line-height</code> sin unidad (1.5 – 1.8) mejora la lectura.</li>
+            <li>Añade siempre una fuente genérica de respaldo (<code>sans-serif</code>, <code>serif</code>, <code>monospace</code>).</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="colores">
+          <h2 class="cheatsheet__section-title">Colores y fondos</h2>
+          <p class="cheatsheet__desc">Formas de definir colores y de pintar fondos, imágenes y degradados.</p>
+          <pre class="cheatsheet__code"><code>color: #0f0f0f;                 /* hexadecimal */
+color: rgb(15 15 15);           /* RGB */
+color: hsl(0 0% 6%);            /* HSL */
+background-color: rgb(0 0 0 / 0.5);  /* con transparencia */
+
+.hero {
+  background-image: url('img/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.degradado { background: linear-gradient(to right, #0f0f0f, #444); }
+.mezcla { background: color-mix(in srgb, #0f0f0f 10%, transparent); }
+.suave { opacity: 0.8; }</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Comprueba que el contraste texto/fondo cumple WCAG (mínimo 4,5:1).</li>
+            <li><code>cover</code> rellena todo el contenedor recortando; <code>contain</code> muestra la imagen entera.</li>
+            <li><code>opacity</code> afecta a todo el elemento; usa colores con alfa si solo quieres el fondo translúcido.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="posicion">
+          <h2 class="cheatsheet__section-title">Display y posición</h2>
+          <p class="cheatsheet__desc">El valor de display define cómo se comporta una caja y position cómo se coloca en la página.</p>
+          <pre class="cheatsheet__code"><code>/* display: block, inline, inline-block, flex, grid o none */
+.oculto { display: none; }
+
+.contenedor { position: relative; }
+.insignia {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>absolute</code> se coloca respecto al ancestro más cercano con <code>position</code> distinto de <code>static</code>.</li>
+            <li><code>sticky</code> necesita un valor como <code>top</code> para funcionar.</li>
+            <li><code>z-index</code> solo afecta a elementos posicionados o a hijos de un contenedor flex o grid.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="flexbox">
+          <h2 class="cheatsheet__section-title">Flexbox</h2>
+          <p class="cheatsheet__desc">Layout en una dimensión (fila o columna) con distribución y alineación flexibles.</p>
+          <pre class="cheatsheet__code"><code>.contenedor {
+  display: flex;
+  flex-direction: row;          /* row | column */
+  flex-wrap: wrap;
+  justify-content: space-between;  /* eje principal */
+  align-items: center;             /* eje secundario */
+  gap: 1rem;
+}
+
+.item {
+  flex: 1 1 calc(33.333% - 1rem);  /* grow | shrink | basis */
+  min-width: 220px;
+}
+
+.especial {
+  align-self: flex-end;
+  order: 2;
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li><code>justify-content</code> actúa sobre el eje principal y <code>align-items</code> sobre el secundario.</li>
+            <li>Con <code>flex: 1 1 &lt;base&gt;</code> y <code>flex-wrap: wrap</code> las tarjetas se reparten y se apilan solas.</li>
+            <li>Usa <code>gap</code> en lugar de márgenes entre elementos.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="grid">
+          <h2 class="cheatsheet__section-title">Grid</h2>
+          <p class="cheatsheet__desc">Layout en dos dimensiones: filas y columnas a la vez.</p>
+          <pre class="cheatsheet__code"><code>.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.ancho { grid-column: span 2; }
+
+/* Columnas responsive sin media queries */
+.auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.pagina {
+  display: grid;
+  grid-template-areas:
+    "cabecera cabecera"
+    "lateral  principal";
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Grid sirve para layouts de dos dimensiones y Flexbox para una sola dirección.</li>
+            <li>La unidad <code>fr</code> reparte el espacio disponible en fracciones.</li>
+            <li><code>repeat(auto-fit, minmax(...))</code> crea columnas adaptables sin media queries.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="responsive">
+          <h2 class="cheatsheet__section-title">Responsive</h2>
+          <p class="cheatsheet__desc">Técnicas para que la web se adapte a cualquier tamaño de pantalla y a las preferencias del usuario.</p>
+          <pre class="cheatsheet__code"><code>img { max-width: 100%; height: auto; }
+
+h1 { font-size: clamp(2rem, 6vw, 4.5rem); }
+
+/* Mobile first: estilos base y ampliaciones con min-width */
+.tarjeta { flex-direction: column; }
+
+@media (min-width: 768px) {
+  .tarjeta { flex-direction: row; }
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none; transition: none; }
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Declara en el HTML el meta <code>viewport</code>; sin él, los móviles no escalan la página.</li>
+            <li>Mobile first: escribe primero el diseño móvil y amplía con <code>min-width</code>.</li>
+            <li><code>clamp(mín, ideal, máx)</code> crea tamaños fluidos sin media queries.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="variables">
+          <h2 class="cheatsheet__section-title">Variables CSS</h2>
+          <p class="cheatsheet__desc">Las propiedades personalizadas guardan valores reutilizables y permiten crear temas.</p>
+          <pre class="cheatsheet__code"><code>:root {
+  --color-primario: #0f0f0f;
+  --color-fondo: #f2f0ec;
+  --espacio-md: 1rem;
+}
+
+.tarjeta {
+  padding: var(--espacio-md);
+  color: var(--color-primario);
+  background: var(--color-fondo);
+}
+
+/* Cambiar el tema redefiniendo variables */
+.dark-mode {
+  --color-primario: #ececec;
+  --color-fondo: #121212;
+}
+
+/* Valor de respaldo */
+.boton { color: var(--color-texto, #333); }</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Se declaran con <code>--nombre</code> y se leen con <code>var(--nombre)</code>.</li>
+            <li>Se heredan en cascada: redefinirlas en un ancestro cambia a todos sus descendientes.</li>
+            <li>Son ideales para el modo oscuro: solo cambian los valores, no las reglas.</li>
+          </ul>
+        </section>
+
+        <section class="cheatsheet__section" id="animaciones">
+          <h2 class="cheatsheet__section-title">Animaciones</h2>
+          <p class="cheatsheet__desc">Las transiciones suavizan un cambio de estado; las animaciones con keyframes definen secuencias.</p>
+          <pre class="cheatsheet__code"><code>.boton {
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.boton:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel {
+  animation: aparecer 0.35s ease;
+}</code></pre>
+          <ul class="cheatsheet__tips">
+            <li>Declara la <code>transition</code> en el estado base, no en <code>:hover</code>.</li>
+            <li>Anima <code>transform</code> y <code>opacity</code>: son las propiedades más fluidas para el navegador.</li>
+            <li>Respeta <code>prefers-reduced-motion</code> para usuarios sensibles al movimiento.</li>
+          </ul>
+        </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

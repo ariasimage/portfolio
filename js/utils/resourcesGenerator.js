@@ -43,8 +43,10 @@ const resourcesGenerator = () => {
                   href="${item.url}"
                   target="_blank"
                   rel="noopener noreferrer"
-                >${item.title}</a>
-                <p class="resources__note">${item.note}</p>
+                >
+                  <span class="resources__name">${item.title}</span>
+                  <p class="resources__note">${item.note}</p>
+                </a>
               </li>
             `,
               )
